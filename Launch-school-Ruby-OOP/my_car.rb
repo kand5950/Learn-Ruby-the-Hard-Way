@@ -10,10 +10,12 @@ class Vehicle
     puts "#{miles / gallons} miles per gallon of gas"
   end
 
-  def 
+  def initialize
+    @@number_of_vehicles += 1
+  end
 end
 
-module diesel
+module Diesel
   puts "this vehicle takes diesel"
 end
 
@@ -64,18 +66,14 @@ class MyCar < Vehicle
 end
 
 class MyTruck < Vehicle
+  include Diesel
   NUMBER_OF_DOORS = 2
-  include diesel
+  
 end
 
-
-accord = MyCar.new("2007", "red", "Accord")
-puts accord
-# accord.speed_up(100)
-# accord.break(20)
-# accord.current_speed
-# accord.shut_off
-# accord.change_color("Black")
-# puts accord.info
-
-# MyCar.gas_mileage(13, 351)
+puts "--------------"
+puts Vehicle.ancestors
+puts "--------------"
+puts MyCar.ancestors
+puts "--------------"
+puts MyTruck.ancestors
