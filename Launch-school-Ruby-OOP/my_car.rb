@@ -40,16 +40,20 @@ class MyCar
   def self.gas_mileage(gallons, miles)
     puts "#{miles / gallons} miles per gallon of gas"
   end
+
+  def to_s
+    "This #{@model} was made in #{year} and is in the color #{color}"
+  end
 end
 
 
 accord = MyCar.new("2007", "red", "Accord")
-puts accord.info
-accord.speed_up(100)
-accord.break(20)
-accord.current_speed
-accord.shut_off
-accord.change_color("Black")
-puts accord.info
+puts accord
+# accord.speed_up(100)
+# accord.break(20)
+# accord.current_speed
+# accord.shut_off
+# accord.change_color("Black")
+# puts accord.info
 
-MyCar.gas_mileage(13, 351)
+# MyCar.gas_mileage(13, 351)
