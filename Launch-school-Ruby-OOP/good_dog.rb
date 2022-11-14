@@ -18,10 +18,12 @@ class GoodDog
   end
 
   def what_is_self
-    self
+    self # => inside instance method refers to the object
   end
+
+  puts self # => outside an instance method refers to class GoodDog # => "GoodDog"
 end
 
 sparky = GoodDog.new("Sparky", "12 inches", "10 lbs")
-p sparky.what_is_self
+p sparky.what_is_self # => object of sparky
 
