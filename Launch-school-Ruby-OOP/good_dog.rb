@@ -12,12 +12,12 @@ class GoodDog
   end
 
   def speak
-    "#{name} says Arf!"
+    "#{name} says Arf!" #name instead of @name to use getter method is better
   end
 
   def change_info(n, h, w)
     self.name = n
-    self.height = h
+    self.height = h #recommended to use self. prefix for setter method
     self.weight = w
   end
 
