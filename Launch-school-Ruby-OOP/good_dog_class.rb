@@ -1,26 +1,34 @@
-class Animal #=>SuperClass
+module Walkable
+  def walk
+    "I'm walking"
+  end
+end
+
+module Swimmable
+  def swim
+    "I'm swimming"
+  end
+end
+
+module Climable
+  def climb
+    "I'm climbing"
+  end
+end
+
+class Animal
+  include Walkable
+
   def speak
-    "Hello!"
+    "I'm an animal, and I speak!"
   end
 end
 
-class GoodDog < Animal # => GoodDog is a subclass inhereting from Animal
-  attr_accessor :name
+puts "---Animal method lookup---"
+puts Animal.ancestors
 
-  def inhereting(n)
-    self.name = n
-  end
-
-  def speak
-    "#{self.name} says arf!"
-  end
-end
-
-class Cat < Animal
-end
-
-sparky = GoodDog.new("Sparky")
-paws = Cat.new
-
-puts sparky.speak  #=> Sparky says arf!
-puts paws.speak    #=> Hello!
+fido = Animal.new
+#Ruby found speak in Animal and looked no further
+puts fido.speak   # => I'm an animal, and I speak!
+#Ruby looks for instance method walk in Animal(not found) then finds walk in module and executes
+puts fido.walk    # => I'm walking
