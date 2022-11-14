@@ -5,7 +5,12 @@ class Person
     @name = n
   end
 
+  def setter(n)
+    @name = n
+  end
+
 end
 
 p = Person.new("L. Ron")
+p.setter("James")
 puts p.name
