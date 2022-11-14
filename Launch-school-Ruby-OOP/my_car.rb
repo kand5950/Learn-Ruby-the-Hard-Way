@@ -1,5 +1,6 @@
 class MyCar
-  
+  attr_accessor :color
+  attr_reader :year
 
   def initialize(y, c, m)
     @year = y
@@ -8,7 +9,10 @@ class MyCar
     @current_speed = 0
   end
 
-  
+  def change_color(c)
+    self.color = c
+    puts "changed paint color to #{c}"
+  end
 
   def speed_up(number)
     @current_speed += number
@@ -30,7 +34,7 @@ class MyCar
   end
 
   def info
-    "This #{model} was made in #{year} and is in the color #{color}"
+    "This #{@model} was made in #{year} and is in the color #{color}"
   end
 end
 
@@ -41,3 +45,5 @@ accord.speed_up(100)
 accord.break(20)
 accord.current_speed
 accord.shut_off
+accord.change_color("Black")
+puts accord.info
