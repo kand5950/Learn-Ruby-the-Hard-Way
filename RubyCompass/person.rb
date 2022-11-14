@@ -1,16 +1,12 @@
 class Person
-  attr_reader :name
+  attr_accessor :name
 
   def initialize(n)
-    @name = n
-  end
-
-  def setter(n)
     @name = n
   end
 
 end
 
 p = Person.new("L. Ron")
-p.setter("James")
+p.name = ("James")
 puts p.name
