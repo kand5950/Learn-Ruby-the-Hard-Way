@@ -1,29 +1,19 @@
 class GoodDog
-  attr_accessor :name, :height, :weight
+  DOG_YEARS = 7
 
-  def initialize (n, h, w)
+  attr_accessor :name, :age
+
+  def initialize(n, a)
     self.name = n
-    self.height = h
-    self.weight = w
+    self.age = a #used to be self.age = a * DOG_YEAR
   end
 
-  def change_info(n, h, w)
-    self.name = n
-    self.height = h
-    self.weight = w
-  end
+  private
 
-  def info 
-    "#{self.name} weighs #{self.weight} and is #{self.height} tall."
+  def human_years
+    age * DOG_YEARS
   end
-
-  def what_is_self
-    self # => inside instance method refers to the object
-  end
-
-  puts self # => outside an instance method refers to class GoodDog # => "GoodDog"
 end
 
-sparky = GoodDog.new("Sparky", "12 inches", "10 lbs")
-p sparky.what_is_self # => object of sparky
-
+sparky = GoodDog.new("Sparky", 4)
+sparky.human_years
