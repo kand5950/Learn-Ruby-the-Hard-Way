@@ -1,21 +1,16 @@
 class GoodDog
-  @@number_of_dogs = 0 # => Class variable
+  DOG_YEARS = 7 # => Constants
 
-  def initialize # constructor
-    @@number_of_dogs += 1
-  end
+  attr_accessor :name, :age
 
-  def self.total_number_of_dogs
-    @@number_of_dogs
+  def initialize(n, a) # constructor
+    self.name = n
+    self.age = a * DOG_YEARS
   end
 end
 
-puts GoodDog.total_number_of_dogs  # => 0
-
-dog1 = GoodDog.new
-dog2 = GoodDog.new
-
-puts GoodDog.total_number_of_dogs # => 2
+sparky = GoodDog.new("Sparky", 4)
+puts sparky.age  # => 28
 
 
 
