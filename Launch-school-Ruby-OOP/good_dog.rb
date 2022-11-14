@@ -1,25 +1,7 @@
-module Speak
-  def speak(sound)
-    puts sound
+class GoodDog
+  def initialize # => refered as a constructor
+    puts "This object was initialized!"
   end
 end
 
-class GoodDog
-  include Speak
-end
-
-class HumanBeing
-  include Speak
-end
-
-
-# sparky = GoodDog.new
-# sparky.speak("Arf!")  # => Arf!
-# bob = HumanBeing.new
-# bob.speak("Hello!")  # => Hello!
-
-puts "---GoodDog ancestors---"
-puts GoodDog.ancestors
-puts ''
-puts "---HumanBeing ancestors---"
-puts HumanBeing.ancestors
+sparky = GoodDog.new  # => "This object was initialized!"
