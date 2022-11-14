@@ -8,12 +8,17 @@ class GoodDog
     self.age = a #used to be self.age = a * DOG_YEAR
   end
 
+  def public_disclosure #method that access private method *above private*
+    "#{self.name} in human years is #{human_years}"
+  end
+
   private
 
   def human_years
     age * DOG_YEARS
   end
+
 end
 
 sparky = GoodDog.new("Sparky", 4)
-sparky.human_years
+puts sparky.public_disclosure
