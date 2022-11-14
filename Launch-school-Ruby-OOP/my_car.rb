@@ -5,12 +5,16 @@ class Vehicle
   def self.number_of_vehicles
     puts "This program has created #{@@number_of_vehicles} vehicles"
   end
-  
+
   def self.gas_mileage(gallons, miles)
     puts "#{miles / gallons} miles per gallon of gas"
   end
 
   def 
+end
+
+module diesel
+  puts "this vehicle takes diesel"
 end
 
 class MyCar < Vehicle
@@ -61,6 +65,7 @@ end
 
 class MyTruck < Vehicle
   NUMBER_OF_DOORS = 2
+  include diesel
 end
 
 
