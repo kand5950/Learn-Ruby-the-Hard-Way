@@ -13,7 +13,13 @@ class HumanBeing
 end
 
 
-sparky = GoodDog.new
-sparky.speak("Arf!")  # => Arf!
-bob = HumanBeing.new
-bob.speak("Hello!")  # => Hello!
+# sparky = GoodDog.new
+# sparky.speak("Arf!")  # => Arf!
+# bob = HumanBeing.new
+# bob.speak("Hello!")  # => Hello!
+
+puts "---GoodDog ancestors---"
+puts GoodDog.ancestors
+puts ''
+puts "---HumanBeing ancestors---"
+puts HumanBeing.ancestors
