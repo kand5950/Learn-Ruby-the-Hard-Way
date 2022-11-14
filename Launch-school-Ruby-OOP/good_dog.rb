@@ -1,7 +1,7 @@
 class GoodDog
-  def initialize # => refered as a constructor
-    puts "This object was initialized!"
+  def initialize(name) # => refered as a constructor
+    @name = name
   end
 end
 
-sparky = GoodDog.new  # => "This object was initialized!"
+sparky = GoodDog.new("Sparky")
