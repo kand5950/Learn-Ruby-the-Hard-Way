@@ -1,7 +1,16 @@
 class Vehicle 
+
+  @@number_of_vehicles = 0
+
+  def self.number_of_vehicles
+    puts "This program has created #{@@number_of_vehicles} vehicles"
+  end
+  
   def self.gas_mileage(gallons, miles)
     puts "#{miles / gallons} miles per gallon of gas"
   end
+
+  def 
 end
 
 class MyCar < Vehicle
